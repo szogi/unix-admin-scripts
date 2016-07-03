@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+# list apache2 enabled vhost ips from dns dirty hack by szogi@2015-10-12	<dev@localnet.hu> |
+for i in `egrep "ServerName|ServerAlias" /etc/apache2/sites-enabled/* | awk '{ print $3 }' |sort -u|grep -v www.`; do echo -n $i " "; D=`dig -4 +noall +answer $i a`; if [ -n "$D" ]; then echo $D | awk '{ print $5 }'; else echo; fi; done
