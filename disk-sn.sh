@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # (SCSI)Disk serial number querier/logger by szogi@2015-10-12	<dev@localnet.hu> | (thx2 Andras KORN)
-# depends: lsscsi, smartmontools, bsdutils
+# depends: lsscsi, smartmontools, bsdutils, coreutils, sed
 # call from rc.local
 
 #query disks' s/n and log it 
